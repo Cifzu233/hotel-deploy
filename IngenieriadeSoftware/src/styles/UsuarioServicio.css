@@ -1,0 +1,109 @@
+/* src/styles/UsuarioServicio.css */
+
+.usuario-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.usuario-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.usuario-header h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.usuario-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.usuario-info div {
+  display: flex;
+  flex-direction: column;
+}
+
+.usuario-info label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.usuario-info input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.usuario-info input:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+.usuario-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.usuario-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.usuario-actions .btn-guardar {
+  background-color: #0077ff;
+  color: white;
+}
+
+.usuario-actions .btn-guardar:hover {
+  background-color: #005fcc;
+}
+
+.usuario-actions .btn-cancelar {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.usuario-actions .btn-cancelar:hover {
+  background-color: #c7c7c7;
+}
+
+.usuario-historial {
+  margin-top: 3rem;
+}
+
+.usuario-historial h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.historial-item {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background-color: #181616;
+}
+
+.historial-item p {
+  margin: 0.3rem 0;
+}

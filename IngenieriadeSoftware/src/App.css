@@ -1,0 +1,86 @@
+/* Estilos generales para la página */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #030116;  
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar-logo {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  padding: 10px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para la página principal con imagen de fondo */
+.welcome-section {
+  background-image: url('assets/hotel-bg.jpg');  /* Ruta a la imagen */
+  background-size: cover; /* Asegura que la imagen cubra toda la sección */
+  background-position: center center; /* Centra la imagen */
+  min-height: 100vh; /* Asegura que cubra todo el alto de la pantalla */
+  padding-top: 100px; /* Evita que el contenido se solape con el navbar */
+  text-align: center;
+  color: white;
+}
+
+.welcome-section h1 {
+  font-size: 60px;
+  margin-top: 150px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para los componentes, si es necesario */
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos para pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  .welcome-section h1 {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,49 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # Microservicio de Habitaciones
+  habitacion-service:
+    build:
+      context: ./habitacion-service
+      dockerfile: Dockerfile
+    container_name: habitacion-service
+    restart: on-failure
+    env_file:
+      - ./habitacion-service/.env
+    ports:
+      - '4000:4000'
+    networks:
+      - hotel-net
+
+  # Microservicio de Hoteles
+  hotel-service:
+    build:
+      context: ./hotel-service
+      dockerfile: Dockerfile
+    container_name: hotel-service
+    restart: on-failure
+    env_file:
+      - ./hotel-service/.env
+    ports:
+      - '5000:5000'
+    networks:
+      - hotel-net
+
+  # Frontend React+Vite
+  frontend:
+    build:
+      context: ./IngenieriadeSoftware
+      dockerfile: Dockerfile
+    container_name: hotel-frontend
+    restart: unless-stopped
+    env_file:
+      - ./IngenieriadeSoftware/.env
+    ports:
+      - '3000:80'
+    networks:
+      - hotel-net
+
+networks:
+  hotel-net:
+    driver: bridge
