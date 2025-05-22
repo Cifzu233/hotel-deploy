@@ -1,0 +1,191 @@
+/* ESTILO GLOBAL*/
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #91d9ef;
+  color: #061f5a;
+}
+
+/* CONTENEDOR FLEX DE 3 COLUMNAS*/
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.availability-container,
+.crud-form,
+.crud-table {
+  flex: 1;
+  min-width: 300px;
+}
+
+/*SECCIÓN: RESERVAS */
+.availability-container {
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #68c6f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.availability-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0d1868;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #4d96f0;
+  border-radius: 5px;
+  background-color: #03122e;
+  color: #ffffff;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #1bd3e0;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #09d8dc;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.result {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*SECCIÓN: FORMULARIO CRUD */
+.crud-form {
+  margin-top: 2rem;
+  background-color: #b9effd;
+  padding: 1rem;
+  border: 1px solid #40aeea;
+  border-radius: 8px;
+}
+
+.crud-form input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.input-tipo {
+  background-color: #95cdf0;
+  color: #ffffff;
+  border: 1px solid #91d9fd;
+}
+
+.input-precio {
+  background-color: #95cdf0;
+  color: #ffffff;
+  border: 1px solid #92c8f5;
+}
+
+.label-disponible {
+  font-weight: bold;
+  color: #029bed;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.label-disponible input[type="checkbox"] {
+  accent-color: #4caf50;
+}
+
+.btn-guardar {
+  width: 100%;
+  background-color: #19d24d;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-guardar:hover {
+  background-color: #23ad3a;
+}
+
+/* SECCIÓN: TABLA CRUD*/
+.crud-table {
+  margin-top: 2rem;
+}
+
+.crud-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(22, 81, 164, 0.879);
+}
+
+.crud-table th,
+.crud-table td {
+  border: 1px solid #042086;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.crud-table th {
+  background-color: #80bbf6;
+  color: #ffffff;
+}
+
+.crud-table td {
+  color: #ffffff;
+}
+
+.crud-table td button {
+  margin: 0 0.25rem;
+  background-color: #ffca28;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.crud-table td button:last-child {
+  background-color: #ef5350;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .availability-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

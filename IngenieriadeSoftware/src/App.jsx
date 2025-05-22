@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import RoomAvailability from './components/RoomAvailability';  // Componente para verificar disponibilidad
-import NotificationComponent from './components/NotificationComponent';  // Componente de Notificaciones
 import ReservasComponent from './components/ReservasComponent';
 import HotelComponent from './components/HotelComponent';  // Componente de Hoteles
 import UsuarioServicio from './components/UsuarioServicio';
@@ -25,9 +24,8 @@ const App = () => {
 
             {/* Menú de navegación */}
             <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-              <li><Link to="/disponibilidad">Servicio de Disponibilidad</Link></li>
-              <li><Link to="/notificaciones">Servicio de Notificaciones</Link></li>
               <li><Link to="/reservas">Servicio de Reservas</Link></li>
+              <li><Link to="/disponibilidad">Servicio de Disponibilidad</Link></li>
               <li><Link to="/hoteles">Servicio de Hoteles</Link></li>
               <li><Link to="/usuarios">Servicio de Usuarios</Link></li>
             </ul>
@@ -49,7 +47,6 @@ const App = () => {
         {/* Rutas para los servicios */}
         <Routes>
           <Route path="/disponibilidad" element={<RoomAvailability />} />
-          <Route path="/notificaciones" element={<NotificationComponent />} />
           <Route path="/hoteles" element={<HotelComponent />} />
           <Route path="/reservas" element={<ReservasComponent />} />
           <Route path="/usuarios" element={<UsuarioServicio />} />

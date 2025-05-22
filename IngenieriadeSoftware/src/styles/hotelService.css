@@ -1,126 +1,200 @@
-/* src/styles/hotelComponent.css */
 .hotel-component-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Asegura que los elementos se acomoden en pantallas más pequeñas */
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Estilo del filtro */
+.filter-section {
+  flex: 1;
+  background-color: #8cc7fb;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  min-width: 260px;
+}
+
+.filter-section h2 {
+  text-align: center;
+  color: #012931;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.filter-section label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.filter-section select,
+.filter-section input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+}
+
+.filter-section button {
+  background-color: #ec7718;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+ margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+.filter-section button:hover {
+  background-color: #eac0a0;
+}
+
+/* Contenedor que agrupa lista y formulario */
+.hotel-management-section {
+  display: flex;
+  flex: 3;
+  gap: 30px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+/* Lista de hoteles */
+.hotel-list {
+  flex: 2;
+  min-width: 480px;
+}
+
+.hotel-item {
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-item h3 {
+  color: #333;
+  font-size: 20px;
+}
+
+.hotel-item p {
+  color: #666;
+  font-size: 16px;
+}
+
+.hotel-item button {
+  padding: 8px 12px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.hotel-item button:first-of-type {
+  background-color: #ffd000;
+}
+
+.hotel-item button:first-of-type:hover {
+  background-color: #0056b3;
+}
+
+.hotel-item button:last-of-type {
+  background-color: #dc3545;
+}
+
+.hotel-item button:last-of-type:hover {
+  background-color: #b02a37;
+}
+
+/* Formulario de hotel */
+.hotel-form {
+  flex: 1;
+  background-color: #b4e6ff; /* color celeste pastel */
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-form h2 {
+  font-size: 26px;
+  color: #023a45;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.hotel-form input,
+.hotel-form select {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+}
+
+.hotel-form button {
+  background-color: #28a745; /* verde */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.hotel-form button:hover {
+  background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hotel-component-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* Centrado y estilo del formulario */
-  .filter-section {
-    flex: 1;
-    background-color: #79c0ff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 350px; /* Máxima anchura para el formulario */
-    margin-right: 20px; /* Separación con la lista de hoteles */
-  }
-  
-  .filter-section h2 {
-    text-align: center;
-    color: #333;
-    font-size: 24px;
-  }
-  
-  .filter-section label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 16px;
-  }
-  
-  .filter-section select {
+
+  .filter-section,
+  .hotel-list,
+  .hotel-form {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-right: 0;
   }
-  
-  .filter-section button {
-    background-color: #ff5722;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+
+  .hotel-management-section {
+    flex-direction: column;
   }
-  
-  .filter-section button:hover {
-    background-color: #e64a19;
-  }
-  
-  /* Estilo para la lista de hoteles */
-  .hotel-list {
-    flex: 2;
-  }
-  
-  .hotel-item {
-    background-color: #ffffff;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .hotel-item h3 {
-    color: #333;
-    font-size: 20px;
-  }
-  
-  .hotel-item p {
-    color: #666;
-    font-size: 16px;
-  }
-  
-  .hotel-item img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
-  
-  /* Asegura que todo se vea bien en pantallas pequeñas */
-  @media (max-width: 768px) {
-    .hotel-component-container {
-      flex-direction: column;
-      align-items: center; /* Centra todo el contenido en pantallas pequeñas */
-    }
-  
-    .hotel-item {
-      width: 100%;
-    }
-  
-    .filter-section {
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 20px; /* Añadir espacio en la parte inferior del formulario */
-    }
-  }
-  
-  /* Estilo para el título "Buscar Hoteles" */
-  .filter-section h2 {
-    font-size: 28px;
-    color: #023a45;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  /* Mejorar la visibilidad de los filtros */
-  .filter-section select,
-  .filter-section input {
-    font-size: 16px;
-    color: #333;
-    background-color: #fff;
-  }
-  
-  .filter-section button {
-    background-color: #f4a261;
-  }
-  
-  
+}
+
+.filter-section h2,
+.hotel-form h2 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  margin-top: 60px; 
+}
+
+
