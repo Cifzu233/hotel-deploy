@@ -2,6 +2,22 @@
 version: '3.8'
 
 services:
+
+  mysql-users:
+    image: mysql:8
+    container_name: mysql-users
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: usuario
+    ports:
+      - "3307:3306"
+    volumes:
+      - usersdb_data:/var/lib/mysql
+    
+    networks:
+      - hotel-net
+
   # Microservicio de Habitaciones
   habitacion-service:
     build:
@@ -13,6 +29,22 @@ services:
       - ./habitacion-service/.env
     ports:
       - '4000:4000'
+    networks:
+      - hotel-net
+  
+  # usuarios
+  usuarios-service:
+    build:
+      context: ./usuarios-service
+      dockerfile: Dockerfile
+    container_name: usuarios-service
+    restart: on-failure
+    env_file:
+      - ./usuarios-service/.env
+    depends_on:
+      - mysql-users
+    ports:
+      - '8000:8000'
     networks:
       - hotel-net
 
@@ -43,6 +75,9 @@ services:
       - '3000:80'
     networks:
       - hotel-net
+
+volumes:
+  usersdb_data:
 
 networks:
   hotel-net:

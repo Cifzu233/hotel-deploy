@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api/usuarios';
+const API_BASE_URL = 'http://localhost:8000/users';
 
 // Obtener información de un usuario por ID
 export const getUserById = async (userId) => {
